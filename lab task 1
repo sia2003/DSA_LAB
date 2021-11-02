@@ -1,0 +1,31 @@
+class node:
+  def init(self, data=None):
+    self.data = data
+    self.next = None
+    print("node has been created")
+
+class linkedlist:
+  def init(self):
+    self.head = node()
+    print("head is initialized")
+
+  def append(self,data):
+    new_node=node(data)
+    curr=self.head
+    while curr.next!=None:
+      curr = curr.next
+    curr.next = new_node
+
+  def display(self):
+    curr=self.head
+    dis = []
+    while curr.next!=None:
+      curr=curr.next
+      dis.append(curr.data)
+    print(dis)
+    
+my_list = linkedlist()
+my_list.append(1)
+my_list.append(2)
+my_list.append(3)
+my_list.display()
